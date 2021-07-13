@@ -7,6 +7,7 @@ export async function getAccessToken() {
   const timestamp = () => {
     return Math.floor(Date.now() / 1000)
   }
+  const refresh_token = await BUCKET.get('refresh_token')
 
   // Fetch access token
   const data = await BUCKET.get('onedrive', 'json')
